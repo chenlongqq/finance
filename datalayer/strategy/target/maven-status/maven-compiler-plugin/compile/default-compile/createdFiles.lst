@@ -1,0 +1,4 @@
+com\waben\stock\datalayer\strategy\StrategyApplication.class
+com\waben\stock\datalayer\strategy\warpper\BeanConfigurer.class
+com\waben\stock\datalayer\strategy\warpper\WebConfigurer.class
+com\waben\stock\datalayer\strategy\warpper\DataAccessConfigurer.class

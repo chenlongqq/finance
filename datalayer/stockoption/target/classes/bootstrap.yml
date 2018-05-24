@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: stockoption
+  profiles:
+    active: dev
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+    config:
+      discovery:
+        enabled: true
+        service-id: 'config'
+      fail-fast: true
+      label: master
+eureka:
+  instance:
+    metadata-map:
+      cluster: finance
+      management:
+        port: ${management.port}
+        context-path: ${management.context-path}
+      health:
+        path: ${management.context-path}/health
+    status-page-url-path: ${management.context-path}/info
+    health-check-url-path: ${management.context-path}/health
+    prefer-ip-address: true
+    hostname: ${spring.cloud.client.ipAddress}
+    #lease-expiration-duration-in-seconds: 30  # 续约到期时间
+    #lease-renewal-interval-in-seconds: 10  #续约更新时间间隔
+  client:
+    service-url:
+      defaultZone: http://discoverymaster:8882/eureka/
+#    healthcheck:
+#      enabled: true

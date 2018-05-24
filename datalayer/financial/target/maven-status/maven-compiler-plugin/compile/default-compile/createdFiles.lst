@@ -1,0 +1,4 @@
+com\waben\stock\datalayer\financial\warpper\WebConfigurer.class
+com\waben\stock\datalayer\financial\warpper\DataAccessConfigurer.class
+com\waben\stock\datalayer\financial\warpper\BeanConfigurer.class
+com\waben\stock\datalayer\financial\FinancialApplication.class

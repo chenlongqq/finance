@@ -1,0 +1,1 @@
+2018-05-16 09:37:33.093 [INFO ] [AsyncResolver-bootstrap-executor-0] [com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver:43] - Resolving eureka endpoints via configuration

@@ -1,0 +1,27 @@
+server:
+  port: 8085
+  context-path: /promotion
+  connection-timeout: 60000
+management:
+  port: 3035
+  context-path: /turbine
+spring:
+  mvc:
+    throw-exception-if-no-handler-found: true
+  thymeleaf:
+    cache: false
+  http:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+hystrix:
+  command:
+    default:
+     execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+ribbon:
+  OkToRetryOnAllOperations: false
+  ReadTimeout: 30000
+  ConnectTimeout: 30000

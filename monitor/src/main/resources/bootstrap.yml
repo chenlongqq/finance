@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: monitor
+  profiles:
+    active: @active@
+  cloud:
+      loadbalancer:
+        retry:
+          enabled: true
+      config:
+        discovery:
+          enabled: true
+          service-id: 'config'
+        fail-fast: true
+        label: @config.branch@
+turbine:
+  app-config: operation
+  aggregator:
+    clusterConfig: finance
+  cluster-name-expression: metadata['cluster']
+  instanceUrlSuffix:
+    finance: 'turbine/hystrix.stream'
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: @discovery.server@

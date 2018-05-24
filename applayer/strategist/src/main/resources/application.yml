@@ -1,0 +1,26 @@
+server:
+  port: 8084
+  maxHttpPostSize: 10485760
+management:
+  port: 3034
+  context-path: /turbine
+spring:
+  mvc:
+    throw-exception-if-no-handler-found: true
+  http:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  thymeleaf:
+    prefix: classpath:/templates/
+hystrix:
+  command:
+    default:
+     execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+ribbon:
+  OkToRetryOnAllOperations: false
+  ReadTimeout: 30000
+  ConnectTimeout: 30000
